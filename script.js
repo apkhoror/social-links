@@ -3,6 +3,7 @@ const apiURL = "https://api.countapi.xyz/hit/apkhoror.github.io/social-links";
 // Fetch data dari CountAPI
 fetch(apiURL, {
   method: "GET",
+  mode: "no-cors",
 })
   .then((response) => response.json())
   .then((data) => {
