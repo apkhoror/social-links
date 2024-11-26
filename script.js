@@ -5,7 +5,7 @@ fetch(apiURL, {
   method: "GET",
   mode: "no-cors",
 })
-  .then((response) => response.json())
+  .then((response) => response)
   .then((data) => {
     document.getElementById("visitorCount").textContent = data.value;
   })
