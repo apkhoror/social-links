@@ -1,13 +1,12 @@
-const apiURL = "https://api.countapi.xyz/hit/apkhoror.github.io/social-links";
+const popup = document.querySelector(".popup");
+const donasi = function (e) {
+  e.preventDefault();
 
-// Fetch data dari CountAPI
-fetch(apiURL, {
-  method: "GET",
-})
-  .then((response) => response.json())
-  .then((data) => {
-    document.getElementById("visitorCount").textContent = data.value;
-  })
-  .catch((err) => {
-    console.log("Error Fetching data: ", err);
-  });
+  popup.classList.add("show");
+  document.body.classList.add("no-scroll");
+};
+
+popup.addEventListener("click", function () {
+  popup.classList.remove("show");
+  document.body.classList.remove("no-scroll");
+});

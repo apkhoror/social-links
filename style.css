@@ -7,6 +7,7 @@
 :root {
   --primary-color: rgb(80, 80, 80);
   --black-color: rgb(63, 63, 63);
+  --white-color: white;
 }
 
 html {
@@ -26,7 +27,9 @@ body {
   margin: 6px;
   padding: 48px 12px 0;
   background-color: white;
-  position: relative;
+}
+body.no-scroll {
+  overflow: hidden;
 }
 
 body header {
@@ -36,7 +39,7 @@ body header {
   gap: 12px;
   align-items: center;
 }
-header .visitor-count {
+/* header .visitor-count {
   position: absolute;
   top: 12px;
   right: 12px;
@@ -45,7 +48,7 @@ header .visitor-count {
   justify-content: center;
   align-items: center;
   font-size: 12px;
-}
+} */
 header .profile {
   border: 1px solid;
   width: 120px;
@@ -95,6 +98,18 @@ main .links a {
   font-size: 14px;
   font-weight: bold;
 }
+main .links button {
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  padding: 12px;
+  border-radius: 12px;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  font-weight: bold;
+}
 
 main .video {
   width: 100%;
@@ -104,6 +119,50 @@ main .video {
 }
 .video iframe {
   border-radius: 12px;
+}
+
+/* POPUP */
+.popup {
+  position: fixed;
+  padding: 12px;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(43, 43, 43, 0.4);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.popup.show {
+  display: flex;
+}
+.popup .container {
+  background-color: var(--white-color);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 48px 24px;
+  width: 100%;
+  border-radius: 12px;
+}
+.container a {
+  display: flex;
+  align-items: center;
+  border: 1px solid;
+  width: 100%;
+  padding: 12px;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--white-color);
+  background-color: var(--primary-color);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.container img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
 }
 
 footer {
