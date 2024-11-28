@@ -8,8 +8,10 @@ const donasi = function (e) {
   document.body.classList.add("no-scroll");
 };
 
-popup.addEventListener("click", function () {
-  popup.classList.remove("show");
-  popupContainer.classList.remove("show");
-  document.body.classList.remove("no-scroll");
+popup.addEventListener("click", function (e) {
+  if (e.target === popup) {
+    popup.classList.remove("show");
+    popupContainer.classList.remove("show");
+    document.body.classList.remove("no-scroll");
+  }
 });
